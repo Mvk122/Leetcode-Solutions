@@ -1,0 +1,25 @@
+def find(s, start, end):
+    left_present = False
+    confirmed = 0
+    unconfirmed = 0
+    print(s[start-1:end])
+    for char in s[start-1:end]:
+        if char == '|':
+            if left_present:
+                confirmed += unconfirmed
+                unconfirmed = 0
+            else:
+                unconfirmed = 0
+                left_present = True
+        else:
+            if left_present:
+                unconfirmed += 1
+    return confirmed
+
+
+def better(s):
+    return s.strip("*").count("*")
+
+print(find('|**|*|*', 1, 7))
+
+print(better('|**|*|*'))
