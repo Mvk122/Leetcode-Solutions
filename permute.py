@@ -1,3 +1,4 @@
+# lecture: https://www.youtube.com/watch?v=NdF1QDTRkck&t=716s
 def permute_f(current, remainder, result):
     if remainder == "":
         result.append(current)
