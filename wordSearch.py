@@ -1,3 +1,43 @@
+from typing import List
+
+# Working solution
+class Solution:
+    def __init__(self):
+        self.directions = [
+            [0,1],
+            [0,-1],
+            [1,0],
+            [-1,0]
+        ]
+    def iterate(self, board, current_row, current_col, word, current_word_index, used_indices):
+        if current_word_index == len(word):
+            return True
+        
+        for direction in self.directions:
+            new_row, new_col = current_row + direction[0], current_col + direction[1]
+            if new_row >= 0 and new_row < len(board) and new_col >= 0 and new_col < len(board[0]) and (new_row, new_col) not in used_indices:
+                if board[new_row][new_col] == word[current_word_index]:
+                    new_used_indices = used_indices.copy()
+                    new_used_indices.add((new_row, new_col))
+                    if self.iterate(board, new_row, new_col, word, current_word_index+1, new_used_indices):
+                        return True
+        return False
+
+        
+    def exist(self, board: List[List[str]], word: str) -> bool:
+        for row_index, row in enumerate(board):
+            for col_index, col in enumerate(row):
+                if col == word[0]:
+                    used_indices = set()
+                    used_indices.add((row_index, col_index))
+                    if self.iterate(board, row_index, col_index, word, 1, used_indices):
+                        return True
+        return False
+                
+
+
+
+# This solution might not work
 def exist(board, word):
     def exist_f(current, word, letter_index, visited, dirs, board):
         visited[current[0]][current[1]] = 1
