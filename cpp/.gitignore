@@ -1,2 +1,6 @@
 *.exe
 headlands.cpp
+headlands_2.v
+headlands_fpga_in_out.txt
+Headlands_FPGA.cpp
+headlands.v
