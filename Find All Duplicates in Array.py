@@ -8,4 +8,4 @@ class Solution:
             if nums[change_index] < 0:
                 answer.append(abs(num))
             nums[change_index] = -nums[change_index]
-        return answer 
+        return answer
