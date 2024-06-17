@@ -9,11 +9,11 @@ def find_element(target, elements):
             l = mid + 1 
         else:
             r = mid - 1
-    print(l)
+    print(l, r)
     return -1
     
 
-elements = [-1,0,3,5,12]
+elements = [-1,0,4,5,12]
 target = 3
 print(find_element(target, elements))
 
