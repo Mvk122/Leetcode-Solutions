@@ -146,3 +146,4 @@ def partition(collection):
     return count
 
 print(partition([4, 3, 6, 5, 3, 4, 7, 1]))
+print(permute_array_subsets([1,2,3]))

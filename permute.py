@@ -26,5 +26,5 @@ def permute_subsets(chars):
     return result
 
 
-# print(permute("abc"))
-print(permute_subsets("abc"))
+print(permute("123"))
+# print(permute_subsets("abc"))
